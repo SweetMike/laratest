@@ -22,7 +22,7 @@ add('writable_dirs', []);
 
 // Hosts
 
-host('119.29.128.88')
+host('119.29.129.88')
     ->user('deployer') // 这里填写 deployer
     // 并指定公钥的位置
     ->identityFile('~/.ssh/deployerkey')
