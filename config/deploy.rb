@@ -47,6 +47,10 @@ namespace :deploy do
                 execute :composer, "install --no-dev --quiet" # install dependencies
                 execute :chmod, "u+x artisan" # make artisan executable
                 execute :cp, "-rfv ../../.env ./.env"
+                execute :rm, "-r storage"
+                execute :rm, "-r bootstrap/cache"
+                execute :ln, "-s ../../shared/storage ./storage"
+                execute :ln, "-s ../../../shared/bootstrap/cache ./bootstrap/cache"
             end
         end
     end
