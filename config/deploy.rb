@@ -46,6 +46,7 @@ namespace :deploy do
             within release_path  do
                 execute :composer, "install --no-dev --quiet" # install dependencies
                 execute :chmod, "u+x artisan" # make artisan executable
+                execute :cp, "-rfv ../../.env ./.env"
             end
         end
     end
